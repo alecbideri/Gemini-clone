@@ -4,7 +4,7 @@ import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/ge
 
 const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 if (!apiKey) {
-    throw new Error("Missing Gemini API key. Check your .env file.");
+    throw new Error("Missing Gemini API key. Check your .env.local file.");
 }
 
 const genAI = new GoogleGenerativeAI(apiKey);
