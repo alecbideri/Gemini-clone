@@ -1,7 +1,5 @@
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
 
-
-
 const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 if (!apiKey) {
     throw new Error("Missing Gemini API key. Check your .env.local file.");
@@ -29,17 +27,12 @@ async function run(prompt) {
         });
 
         const result = await chatSession.sendMessage(prompt);
-
-        console.log("Full API Response:", result); // ✅ Changed: Debug full API response
-
         if (result.response?.candidates?.[0]?.content) {
+
             // Extract just the text from the content
             const responseText = result.response.candidates[0].content.parts?.[0]?.text ||
                 result.response.candidates[0].content.text ||
                 JSON.stringify(result.response.candidates[0].content);
-
-            console.log("Gemini Response:", responseText);
-
             return responseText;
         } else {
             console.error("Unexpected response format:", result);

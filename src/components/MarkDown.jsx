@@ -80,7 +80,7 @@ const MarkdownRenderer = ({ markdown, isLoading }) => {
                                     </button>
                                 </div>
                             );
-                            // --- END OF CHANGES ---
+
                         }
                         return <code className={className} {...props}>{children}</code>;
                     },

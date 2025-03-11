@@ -55,8 +55,8 @@
     }
 
     textarea {
-        -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
-        scrollbar-width: none; /* Hide scrollbar in Firefox */
+        -ms-overflow-style: none;
+        scrollbar-width: none; 
     }
 }
 

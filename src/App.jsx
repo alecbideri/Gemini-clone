@@ -7,10 +7,10 @@ const App = () => {
 
     return (
         <div className="flex h-screen w-screen bg-white text-gray-700 overflow-hidden">
-            {/* Sidebar */}
+
             <Sidebar extended={extended} setExtended={setExtended} />
 
-            {/* Main Content */}
+
             <main
                 className={`flex-1 transition-all duration-300 ease-in-out overflow-auto ${
                     extended
