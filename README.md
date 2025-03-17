@@ -1,3 +1,3 @@
 # Gemini Replica 
 
-This is a front-end application 
+This is more a front end-application that mimicks the real gemini but with only one
