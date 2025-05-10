@@ -18,6 +18,8 @@
     "react-dom": "^19.0.0",
     "react-markdown": "^10.1.0",
     "react-syntax-highlighter": "^15.6.1",
+    "prismjs": "^1.30.0",
+    "core-js": "^3.37.1",
     "tailwindcss": "^4.0.12"
   },
   "devDependencies": {

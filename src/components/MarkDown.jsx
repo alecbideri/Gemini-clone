@@ -2,6 +2,13 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+// Import core prismjs first
+import 'prismjs';
+// Then import language components
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-jsx';
+import 'prismjs/components/prism-python';
+import 'prismjs/components/prism-css';
 
 const MarkdownRenderer = ({ markdown, isLoading }) => {
     if (isLoading) {
@@ -43,8 +50,8 @@ const MarkdownRenderer = ({ markdown, isLoading }) => {
                                             colorMap[type.toLowerCase()] || colorMap.info
                                         }`}
                                     >
-                    {content}
-                  </span>
+                                        {content}
+                                    </span>
                                 );
                             }
                             return <code className={className} {...props}>{children}</code>;
@@ -52,13 +59,10 @@ const MarkdownRenderer = ({ markdown, isLoading }) => {
 
                         const match = /language-(\w+)/.exec(className || '');
                         if (!inline && match) {
-
-                            //  the copy button approach
-
                             const codeString = String(children).replace(/\n$/, '');
                             const copyToClipboard = () => {
                                 navigator.clipboard.writeText(codeString)
-                                    .then(() => alert('Code copied to clipboard!')) // Optional feedback
+                                    .then(() => alert('Code copied to clipboard!'))
                                     .catch((err) => console.error('Failed to copy:', err));
                             };
 
@@ -80,7 +84,6 @@ const MarkdownRenderer = ({ markdown, isLoading }) => {
                                     </button>
                                 </div>
                             );
-
                         }
                         return <code className={className} {...props}>{children}</code>;
                     },
